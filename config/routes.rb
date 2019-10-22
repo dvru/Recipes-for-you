@@ -1,3 +1,30 @@
 Rails.application.routes.draw do
+  # get 'recipe_utensils/index'
+  # get 'recipe_utensils/show'
+  # get 'recipe_utensils/new'
+  # get 'recipe_utensils/create'
+  # get 'recipe_utensils/edit'
+  # get 'recipe_utensils/update'
+  # get 'recipe_utensils/destroy'
+  # get 'recipe_ingredients/index'
+  # get 'recipe_ingredients/show'
+  # get 'recipe_ingredients/new'
+  # get 'recipe_ingredients/create'
+  # get 'recipe_ingredients/edit'
+  # get 'recipe_ingredients/update'
+  # get 'recipe_ingredients/destroy'
+  # get 'ingredients/index'
+  # get 'ingredients/show'
+  # get 'ingredients/new'
+  # get 'ingredients/create'
+  # get 'ingredients/edit'
+  # get 'ingredients/update'
+  # get 'ingredients/destroy'
+  # get 'utensils/index'
+  # get 'utensils/new'
+  # get 'utensils/show'
+  # get 'utensils/edit'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :utensils, :ingredients, :recipe_ingredients
 end
