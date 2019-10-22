@@ -14391,3 +14391,192 @@ Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 628
 >>>>>>> 6d5b8fbabffb7c9b5af142eb1d531b6397872bfe
 
 
+Started GET "/users/new" for ::1 at 2019-10-22 18:15:04 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3528)
+Completed 500 Internal Server Error in 301ms (ActiveRecord: 0.6ms | Allocations: 303025)
+
+
+  
+ActionView::Template::Error (Invalid CSS after ".../sass-lang.com/": expected "{", was ""):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:   </head>
+    10: 
+    11:   <body>
+  
+app/assets/stylesheets/reviews.scss:8
+app/views/layouts/application.html.erb:8
+Started GET "/users/new" for ::1 at 2019-10-22 18:18:07 -0500
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3333)
+Completed 200 OK in 27ms (Views: 14.1ms | ActiveRecord: 0.9ms | Allocations: 10543)
+
+
+Started POST "/users" for ::1 at 2019-10-22 18:18:38 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Oj7HTMebaSS8FebZcfNqA3TYVLNweRxBXZrlyay/Pd08hmqMhHHUP83/pBHrbyvvuqjaQU31QKx2AWF3E6PjGg==", "user"=>{"name"=>"josie", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "josie"], ["password_digest", "$2a$10$S6iCEZ6y0Tw7PpP87R89yO9l.zWDzPKAFYA3IaGlR/eq6ULokZeRi"], ["created_at", "2019-10-22 23:18:38.909170"], ["updated_at", "2019-10-22 23:18:38.909170"]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 77ms (ActiveRecord: 2.5ms | Allocations: 3181)
+
+
+Started GET "/users/5" for ::1 at 2019-10-22 18:18:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 475)
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 2654)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-22 18:19:19 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mlwWkW6QUv1QWm9GhfZz30lPSSBRrIeEC4IycXvm0sbBTlQgO3gf+s5qgFHdlmdqLGzOHukoMZ5jws47PYWBjg==", "commit"=>"Logout"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 0.2ms | Allocations: 2414)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-22 18:19:22 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mlwWkW6QUv1QWm9GhfZz30lPSSBRrIeEC4IycXvm0sbBTlQgO3gf+s5qgFHdlmdqLGzOHukoMZ5jws47PYWBjg==", "commit"=>"Logout"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticated rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 542)
+
+
+Started GET "/login" for ::1 at 2019-10-22 18:19:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2414)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3328)
+
+
+Started POST "/login" for ::1 at 2019-10-22 18:19:30 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"oSJKFCobjsKr720X0Q2q+v3IBo/HFfFQpLCK8JZVL7jp6dyORpz+WORb+Mmx7FdkIjQUFvjiTCn7xOmijN+M8Q==", "name"=>"Damini", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Damini"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 88ms (ActiveRecord: 0.3ms | Allocations: 1180)
+
+
+Started GET "/users/2" for ::1 at 2019-10-22 18:19:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 258)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1857)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-22 18:20:03 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B3tSRV895/qrELe4bkUJ4taE4OAYx/hp2M/hqaAkmK5caRD0CtWq/TUgWK82JR1Xs6dn3qBDTnOwjx3j5kfL5g==", "commit"=>"Logout"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.2ms | Allocations: 1026)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-22 18:20:04 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B3tSRV895/qrELe4bkUJ4taE4OAYx/hp2M/hqaAkmK5caRD0CtWq/TUgWK82JR1Xs6dn3qBDTnOwjx3j5kfL5g==", "commit"=>"Logout"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticated rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 529)
+
+
+Started GET "/login" for ::1 at 2019-10-22 18:20:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2210)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2551)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 18:20:14 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1217)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 1578)
+
+
+Started POST "/users" for ::1 at 2019-10-22 18:20:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"N9R9baEUgHeQVmnBsfz3AidrFkHvjZlxmB99/jVlAakxbNCt4v49bOG8KwkrYLbu6RuYs9IBxZyzhPlAinnfbg==", "user"=>{"name"=>"Hey", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hey"], ["password_digest", "$2a$10$FVBTl34JwNQvuJnCWzQykObquicGlMg035xyhZsY7B4uJSQ67iRku"], ["created_at", "2019-10-22 23:20:23.340443"], ["updated_at", "2019-10-22 23:20:23.340443"]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 79ms (ActiveRecord: 1.7ms | Allocations: 2760)
+
+
+Started GET "/users/6" for ::1 at 2019-10-22 18:20:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticated rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 469)
+
+
+Started GET "/login" for ::1 at 2019-10-22 18:20:23 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2210)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 2548)
+
+
+Started POST "/login" for ::1 at 2019-10-22 18:20:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WV2AO4ZDQbRGMtrFnDhXTfPpKEyD0/Ehl2UK6tgF1aMRlhah6sQxLgmGTxv82arTLBU61bwkTFjIEWm4wo926g==", "name"=>"Hey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Hey"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 88ms (ActiveRecord: 0.3ms | Allocations: 1072)
+
+
+Started GET "/users/6" for ::1 at 2019-10-22 18:20:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 250)
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1846)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-22 18:20:39 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lcQNXHmLBprZmmotgiHjAJwKXIXRdzFrypxIzNnc4YXO1k/tLGNLnUeqhTraQfe1+Snbu2nzh3Gi3LSGn7+yzQ==", "commit"=>"Logout"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 0.2ms | Allocations: 1033)
+
+
