@@ -1,0 +1,17 @@
+<%=form_for @recipe do |f|%>
+<%=f.label :Recipe_Name %>
+<%=f.text_field :title %>
+<br>
+<%=f.label :Recipe_Description %>
+<%=f.text_area :description%>
+<br>
+<%=f.label :Cook_Time_Mins %>
+<%=f.number_field :cook_time %>
+
+<%= f.hidden_field :user_id, :value => @user.id %>
+<br>
+<%= f.label :Creator%>
+<%= @user.name%>
+<br>
+<%=f.submit%>
+<%end%>

@@ -1,0 +1,8 @@
+<p>Hi <%= @user.name %>!</p>
+
+<%= link_to  'All recipe', recipes_path%><br>
+<%= link_to  'My recipe', recipes_path%><br>
+<%= link_to 'Create Recipe', new_recipe_path%>
+<%= form_with url:'/logout', method: 'delete' do |f| %>
+<%= f.submit "Logout"%> 
+<% end %>

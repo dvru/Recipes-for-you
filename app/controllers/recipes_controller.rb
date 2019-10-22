@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-
     total_rate = 0.0
     @recipe.reviews.each do |i|
       total_rate += i.rating
@@ -17,11 +16,29 @@ class RecipesController < ApplicationController
   end
 
   def new
-  
+    @recipe = Recipe.new
+  end
+
+  def create
+    @user_id = session[:user_id]
+
+    @recipe = Recipe.create(recipe_params)
+    redirect_to recipe_path(@recipe)
   end
 
   def edit
 
+  end
+
+  def update
+    @user_id = session[:user_id]
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to recipes_path
   end
 
   private
@@ -30,7 +47,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :user_id, :review_id, :cook_time)
+    params.require(:recipe).permit(:title, :description, :user_id , :cook_time)
   end
 
 end

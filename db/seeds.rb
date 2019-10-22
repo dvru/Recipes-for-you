@@ -16,9 +16,9 @@ RecipeIngredient.destroy_all
 RecipeUtensil.destroy_all
 
 
-us1 = User.create(name: 'Steven', password_digest: 'happy')
-us2 = User.create(name: 'Damini', password_digest: 'sad')
-us3 = User.create(name: 'Jay', password_digest: 'mad')
+us1 = User.create(name: 'Steven', password: 'happy')
+us2 = User.create(name: 'Damini', password: 'sad')
+us3 = User.create(name: 'Jay', password: 'mad')
 
 ut1 = Utensil.create(name: 'Knife')
 ut2 = Utensil.create(name: 'Pot')
