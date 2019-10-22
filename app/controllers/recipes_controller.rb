@@ -4,20 +4,24 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    
   end
 
   def show
-    # total_rate = 0.0
-    # @recipe.reviews.each do |i|
-    #   total_rate += i.rating
-    # end
-    # @avg_rate = total_rate/@recipe.reviews.count
+
+    total_rate = 0.0
+    @recipe.reviews.each do |i|
+      total_rate += i.rating
+    end
+    @avg_rate = total_rate/@recipe.reviews.count
   end
 
   def new
+  
   end
 
   def edit
+
   end
 
   private

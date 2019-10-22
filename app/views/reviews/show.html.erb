@@ -1,0 +1,12 @@
+
+<h2>Reviews</h2>
+<h2><%=@review.rating%></h2>
+<h3><%=@review.comment%></h3>
+
+
+
+
+
+<%= button_to "All Reviews", reviews_path, method: :get %>
+<%= button_to "Edit Reviews", edit_review_path(@review), method: :get %>
+<%= button_to "Remove Review", review_path(@review), method: :delete, data: { confirm: 'Are you sure' }%>
