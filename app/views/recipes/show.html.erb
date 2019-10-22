@@ -1,0 +1,21 @@
+<h1><%=@recipe.title%></h1>
+<h4>Description: <%=@recipe.description%></h4>
+<h4>Cook Time: <%= @recipe.cook_time%> mins </h4>
+<h4>Created by: <%=@recipe.user.name%></h4>
+<h4>Rating: <%= @recipe.review.rating%>
+<br>
+<h4>Cooking Utensils Requirement</h4>
+<% @recipe.utensils.each do |utensil|%>
+    <%= utensil.name%>
+<%end%>
+
+<h4>Ingredients Required</h4>
+<% @recipe.ingredients.each do |ingredient|%>
+    <%= ingredient.quantity %> 
+    <%= ingredient.measurement_type%>
+    <%= ingredient.name%>
+<%end%>
+
+<br>
+<a href="/recipes"><button>All Recipes</button><a>
+<br>
