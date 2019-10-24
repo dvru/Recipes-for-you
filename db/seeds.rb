@@ -47,4 +47,3 @@ recI4 = RecipeIngredient.create(recipe_id: rec1.id, ingredient_id: i2.id)
 # userRR1 = UserRecipeReview.create(user_id: us1.id, review_id: rev1.id, recipe_id: rec1.id)
 # userRR2 = UserRecipeReview.create(user_id: us2.id, review_id: rev2.id, recipe_id: rec2.id)
 # userRR3 = UserRecipeReview.create(user_id: us3.id, review_id: rev3.id, recipe_id: rec1.id)
-

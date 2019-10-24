@@ -8,6 +8,38 @@
 <%=f.label :Cook_Time_Mins %>
 <%=f.number_field :cook_time %>
 
+</p>
+  <h3>Ingredients</h3>
+  <%= f.fields_for :ingredients do |ing| %>
+    <p>
+      <%= ing.label :Amount %>
+      <%= ing.number_field :quantity, :size => 5%>
+      <%= ing.label :Measurement_Type %>
+      <%= ing.text_field :measurement_type, :size => 20 %>
+      <%= ing.label :name %>
+      <%= ing.text_field :name, :size => 20 %>
+      <%= ing.check_box :_destroy %>
+      <%= ing.label :_destroy, 'delete' %>
+    </p>
+  <% end -%>
+  <p>
+    <%= f.submit 'Add ingredient', :name => "add_ingredient" %>
+  </p>
+
+  </p>
+  <h3>Utensils</h3>
+  <%= f.fields_for :utensils do |ing| %>
+    <p>
+      <%= ing.label :name %>
+      <%= ing.text_field :name, :size => 20 %>
+      <%= ing.check_box :_destroy %>
+      <%= ing.label :_destroy, 'delete' %>
+    </p>
+  <% end -%>
+  <p>
+    <%= f.submit 'Add Utensil', :name => "add_utensil" %>
+  </p>
+
 <%= f.hidden_field :user_id, :value => @user.id %>
 <br>
 <%= f.label :Creator%>
