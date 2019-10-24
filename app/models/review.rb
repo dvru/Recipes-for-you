@@ -1,4 +1,9 @@
 class Review < ApplicationRecord
-    has_many :recipes
-    has_many :users, through: :recipes 
+   belongs_to :user
+   belongs_to :recipe
+
+   
+   validates :rating, :comment, :recipe_id, presence: :true
+
+
 end

@@ -1,0 +1,164 @@
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 55]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 56]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 57]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUtensil Load (0.2ms)[0m  [1m[34mSELECT "utensils".* FROM "utensils"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUtensil Destroy (0.5ms)[0m  [1m[31mDELETE FROM "utensils" WHERE "utensils"."id" = ?[0m  [["id", 56]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUtensil Destroy (0.6ms)[0m  [1m[31mDELETE FROM "utensils" WHERE "utensils"."id" = ?[0m  [["id", 57]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUtensil Destroy (0.7ms)[0m  [1m[31mDELETE FROM "utensils" WHERE "utensils"."id" = ?[0m  [["id", 58]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 55]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 56]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 57]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 56]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Destroy (0.7ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 57]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 58]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Destroy (0.4ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 39]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Destroy (0.4ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 40]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeIngredient Destroy (0.4ms)[0m  [1m[31mDELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?[0m  [["id", 73]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeIngredient Destroy (0.3ms)[0m  [1m[31mDELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?[0m  [["id", 74]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeIngredient Destroy (0.3ms)[0m  [1m[31mDELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?[0m  [["id", 75]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeIngredient Destroy (0.6ms)[0m  [1m[31mDELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?[0m  [["id", 76]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipeUtensil Load (0.4ms)[0m  [1m[34mSELECT "recipe_utensils".* FROM "recipe_utensils"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeUtensil Destroy (0.5ms)[0m  [1m[31mDELETE FROM "recipe_utensils" WHERE "recipe_utensils"."id" = ?[0m  [["id", 55]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeUtensil Destroy (0.5ms)[0m  [1m[31mDELETE FROM "recipe_utensils" WHERE "recipe_utensils"."id" = ?[0m  [["id", 56]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipeUtensil Destroy (0.4ms)[0m  [1m[31mDELETE FROM "recipe_utensils" WHERE "recipe_utensils"."id" = ?[0m  [["id", 57]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Steven"], ["password_digest", "$2a$10$mC3ood.YneiUkKMH.CaxEeg1hKFwgmx12ksXG3QEdjGQHiwgKekl."], ["created_at", "2019-10-24 13:48:08.239757"], ["updated_at", "2019-10-24 13:48:08.239757"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Damini"], ["password_digest", "$2a$10$mfj.Q.Rhu4H/E/5ERZIFcuhaki4K.64Oxqx2k.MV7bB.gyd1sRXoi"], ["created_at", "2019-10-24 13:48:08.315184"], ["updated_at", "2019-10-24 13:48:08.315184"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jay"], ["password_digest", "$2a$10$gp8YLx0GwR9IjOKg/DOdQ.INzS9BhAZht4r1UVRAKUJVS35j6ZmJm"], ["created_at", "2019-10-24 13:48:08.389964"], ["updated_at", "2019-10-24 13:48:08.389964"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUtensil Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "utensils" WHERE "utensils"."name" = ? LIMIT ?[0m  [["name", "Knife"], ["LIMIT", 1]]
+  [1m[36mUtensil Create (0.7ms)[0m  [1m[32mINSERT INTO "utensils" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Knife"], ["created_at", "2019-10-24 13:48:08.398541"], ["updated_at", "2019-10-24 13:48:08.398541"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUtensil Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "utensils" WHERE "utensils"."name" = ? LIMIT ?[0m  [["name", "Pot"], ["LIMIT", 1]]
+  [1m[36mUtensil Create (0.7ms)[0m  [1m[32mINSERT INTO "utensils" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pot"], ["created_at", "2019-10-24 13:48:08.406262"], ["updated_at", "2019-10-24 13:48:08.406262"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUtensil Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "utensils" WHERE "utensils"."name" = ? LIMIT ?[0m  [["name", "Mixing Bowl"], ["LIMIT", 1]]
+  [1m[36mUtensil Create (0.8ms)[0m  [1m[32mINSERT INTO "utensils" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mixing Bowl"], ["created_at", "2019-10-24 13:48:08.412496"], ["updated_at", "2019-10-24 13:48:08.412496"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "Salt"], ["LIMIT", 1]]
+  [1m[36mIngredient Create (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "quantity", "measurement_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Salt"], ["quantity", 1], ["measurement_type", "Teaspoon"], ["created_at", "2019-10-24 13:48:08.419294"], ["updated_at", "2019-10-24 13:48:08.419294"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "Flour"], ["LIMIT", 1]]
+  [1m[36mIngredient Create (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "quantity", "measurement_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Flour"], ["quantity", 1], ["measurement_type", "Cup"], ["created_at", "2019-10-24 13:48:08.425753"], ["updated_at", "2019-10-24 13:48:08.425753"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "Butter"], ["LIMIT", 1]]
+  [1m[36mIngredient Create (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "quantity", "measurement_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Butter"], ["quantity", 1], ["measurement_type", "Tablespoon"], ["created_at", "2019-10-24 13:48:08.431832"], ["updated_at", "2019-10-24 13:48:08.431832"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[36mRecipe Create (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "description", "user_id", "cook_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Pasta"], ["description", "throw it in the pot"], ["user_id", 58], ["cook_time", 5], ["created_at", "2019-10-24 13:48:08.445878"], ["updated_at", "2019-10-24 13:48:08.445878"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[36mRecipe Create (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "description", "user_id", "cook_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Bread"], ["description", "throw it in the oven"], ["user_id", 59], ["cook_time", 20], ["created_at", "2019-10-24 13:48:08.452126"], ["updated_at", "2019-10-24 13:48:08.452126"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 2], ["comment", "eh!"], ["user_id", 58], ["recipe_id", 41], ["created_at", "2019-10-24 13:48:08.470651"], ["updated_at", "2019-10-24 13:48:08.470651"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Great!"], ["user_id", 59], ["recipe_id", 42], ["created_at", "2019-10-24 13:48:08.477978"], ["updated_at", "2019-10-24 13:48:08.477978"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comment", "user_id", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["comment", "It's Good!"], ["user_id", 60], ["recipe_id", 41], ["created_at", "2019-10-24 13:48:08.486784"], ["updated_at", "2019-10-24 13:48:08.486784"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mUtensil Load (0.2ms)[0m  [1m[34mSELECT "utensils".* FROM "utensils" WHERE "utensils"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[36mRecipeUtensil Create (0.6ms)[0m  [1m[32mINSERT INTO "recipe_utensils" ("recipe_id", "utensil_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 41], ["utensil_id", 59], ["created_at", "2019-10-24 13:48:08.499831"], ["updated_at", "2019-10-24 13:48:08.499831"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mUtensil Load (0.1ms)[0m  [1m[34mSELECT "utensils".* FROM "utensils" WHERE "utensils"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[36mRecipeUtensil Create (0.7ms)[0m  [1m[32mINSERT INTO "recipe_utensils" ("recipe_id", "utensil_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 42], ["utensil_id", 60], ["created_at", "2019-10-24 13:48:08.515290"], ["updated_at", "2019-10-24 13:48:08.515290"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mUtensil Load (0.1ms)[0m  [1m[34mSELECT "utensils".* FROM "utensils" WHERE "utensils"."id" = ? LIMIT ?[0m  [["id", 61], ["LIMIT", 1]]
+  [1m[36mRecipeUtensil Create (0.9ms)[0m  [1m[32mINSERT INTO "recipe_utensils" ("recipe_id", "utensil_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 41], ["utensil_id", 61], ["created_at", "2019-10-24 13:48:08.526028"], ["updated_at", "2019-10-24 13:48:08.526028"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[36mRecipeIngredient Create (0.5ms)[0m  [1m[32mINSERT INTO "recipe_ingredients" ("recipe_id", "ingredient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 41], ["ingredient_id", 58], ["created_at", "2019-10-24 13:48:08.537859"], ["updated_at", "2019-10-24 13:48:08.537859"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[36mRecipeIngredient Create (0.6ms)[0m  [1m[32mINSERT INTO "recipe_ingredients" ("recipe_id", "ingredient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 42], ["ingredient_id", 59], ["created_at", "2019-10-24 13:48:08.546423"], ["updated_at", "2019-10-24 13:48:08.546423"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[36mRecipeIngredient Create (0.5ms)[0m  [1m[32mINSERT INTO "recipe_ingredients" ("recipe_id", "ingredient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 41], ["ingredient_id", 60], ["created_at", "2019-10-24 13:48:08.556557"], ["updated_at", "2019-10-24 13:48:08.556557"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 59], ["LIMIT", 1]]
+  [1m[36mRecipeIngredient Create (0.7ms)[0m  [1m[32mINSERT INTO "recipe_ingredients" ("recipe_id", "ingredient_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["recipe_id", 41], ["ingredient_id", 59], ["created_at", "2019-10-24 13:48:08.573509"], ["updated_at", "2019-10-24 13:48:08.573509"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
