@@ -1,0 +1,27 @@
+<% if flash[:errors] %> 
+<% flash[:errors].each do |error| %> 
+<li><%= error %> </li> 
+<% end %> 
+<% end %>
+
+
+
+<%=form_for @recipe do |f|%>
+<%=f.label :Recipe_Name %>
+<%=f.text_field :title %>
+<br>
+<%=f.label :Recipe_Description %>
+<%=f.text_area :description%>
+<br>
+<%=f.label :Cook_Time_Mins %>
+<%=f.number_field :cook_time %>
+<br>
+<%= f.collection_select :id, @utensils, :id, :name %> 
+<%# byebug %>
+<%= f.hidden_field :user_id, :value => @user.id %>
+<br>
+<%= f.label :Creator%>
+<%= @user.name%>
+<br>
+<%=f.submit%>
+<%end%>

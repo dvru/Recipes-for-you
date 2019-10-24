@@ -1,0 +1,9 @@
+<h1> Utensils: </h1>
+
+<% @utensils.each do |utensil| %>
+<li>
+<%= link_to utensil.name, utensil_path(utensil) %>
+</li>
+<% end %>
+
+
