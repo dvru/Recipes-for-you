@@ -3,6 +3,5 @@ class Utensil < ApplicationRecord
     has_many :recipes, through: :recipe_utensils
 
     validates :name, presence: true
-    validates :name, uniqueness: true 
 
 end

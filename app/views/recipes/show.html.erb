@@ -17,8 +17,13 @@
 <%end%>
 
 
+
+
 <br><a href="/recipes/<%= @recipe.id%>/edit"><button>Edit Recipes</button><a>
+
+
 <br><a href="/recipes"><button>All Recipes</button><a>
+
 
 <%= form_for @recipe, method: :delete do |f|%>
 <br><%= f.submit "Remove Recipe"%>

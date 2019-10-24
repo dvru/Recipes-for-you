@@ -4,7 +4,6 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-    
   end
 
   def show
@@ -13,27 +12,31 @@ class RecipesController < ApplicationController
       total_rate += i.rating
     end
     @avg_rate = total_rate/@recipe.reviews.count
+    
   end
 
   def new
     @recipe = Recipe.new
+    @utensils = Utensil.all 
+    
   end
 
   def create
     @user_id = session[:user_id]
-
     @recipe = Recipe.create(recipe_params)
     redirect_to recipe_path(@recipe)
+    
   end
 
   def edit
-
+    # byebug
+    @utensils = Utensil.all    
   end
 
   def update
-    @user_id = session[:user_id]
-    @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
+      @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe)
+      
   end
 
   def destroy
@@ -47,7 +50,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :user_id , :cook_time)
+    params.require(:recipe).permit(:title, :description, :user_id, :cook_time)
   end
 
 end

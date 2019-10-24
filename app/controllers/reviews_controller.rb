@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
  
 
   def create
+    @user_id = session[:user_id]
     @review = Review.new(review_params)
 
   if @review.valid?
@@ -29,13 +30,14 @@ class ReviewsController < ApplicationController
       redirect_to new_review_path
   end 
   end
-  
+
   def edit
     @review = Review.find(params[:id])
     @recipes = Recipe.all
   end
 
   def update
+    @user_id = session[:user_id]
     @review = Review.find(params[:id])
     @review.update(review_params)
     redirect_to review_path(@review)

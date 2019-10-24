@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+
   skip_before_action :authenticated, only: [:new, :create]
+  
 
     def new
         @user = User.new
@@ -18,6 +20,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(session[:user_id])
+        
     end
 
     private
