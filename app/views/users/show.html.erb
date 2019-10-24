@@ -1,9 +1,16 @@
 <p>Hi <%= @user.name %>!</p>
-<ul>
-<%= link_to  'All recipe', recipes_path%><br>
-<%= link_to  'My Recipes', recipes_path%><br>
-<%= link_to 'Create Recipe', new_recipe_path%><br>
-<ul>
+<h4>My Recipes</h4>
+
+<% @user.recipes.each do |recipe|%>
+    <%= link_to recipe.title , recipe_path(recipe)%><br>
+<%end%>
+
+
+
+
+<br><%= link_to  'All recipe', recipes_path%><br>
+
+<%= link_to 'Create Recipe', new_recipe_path%>
 <%= form_with url:'/logout', method: 'delete' do |f| %>
 <%= f.submit "Logout"%> 
 <% end %>
