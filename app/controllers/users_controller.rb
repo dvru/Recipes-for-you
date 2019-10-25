@@ -14,6 +14,7 @@ class UsersController < ApplicationController
             @user.save
             redirect_to @user
         else
+            flash[:error] = @user.errors.full_messages
             redirect_to new_user_path
         end
     end
@@ -23,8 +24,6 @@ class UsersController < ApplicationController
         @recipes = Recipe.all
 
     end
-
-
 
     private
     def user_params

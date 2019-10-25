@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
 
-def index
-    @ingredients = Ingredient.all 
+  def index
+    @ingredients = Ingredient.all
   end
 
   def show
@@ -12,13 +12,11 @@ def index
     @ingredient = Ingredient.new
   end
 
- 
 def create 
   @ingredient= Ingredient.new(ingredient_params)
 
   if @ingredient.valid?
-      @ingredient.save 
-      # buybug
+      @ingredient.save
       redirect_to ingredient_path(@ingredient) 
   else 
       flash[:errors] = @ingredient.errors.full_messages
@@ -41,6 +39,15 @@ def destroy
   @ingredient.destroy 
   redirect_to ingredients_path
 end 
+
+def uniq_ingredients
+  @ingredients = Ingredient.all
+  @ingredient_arr = []
+    @ingredients.each do |ingredient|
+      @ingredient_arr << ingredient.name
+    end
+  @ingredient_names = @ingredient_arr.uniq
+end
 
   private
 

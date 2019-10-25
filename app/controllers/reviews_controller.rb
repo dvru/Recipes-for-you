@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 
-
   def index
     @reviews = Review.all
     @recipes = Recipe.all
@@ -15,20 +14,18 @@ class ReviewsController < ApplicationController
     @recipes = Recipe.all
   end
 
- 
-
   def create
     @user_id = session[:user_id]
     @review = Review.new(review_params)
 
-  if @review.valid?
+    if @review.valid?
       @review.save 
       # buybug
       redirect_to review_path(@review) 
-  else 
+    else 
       flash[:errors] = @review.errors.full_messages
       redirect_to new_review_path
-  end 
+    end 
   end
 
   def edit

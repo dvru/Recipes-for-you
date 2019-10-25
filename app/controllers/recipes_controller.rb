@@ -12,19 +12,17 @@ class RecipesController < ApplicationController
       total_rate += i.rating
     end
     @avg_rate = total_rate/@recipe.reviews.count
-    
   end
 
   def new
     @recipe = Recipe.new
     @utensils = Utensil.all 
-    
   end
 
   def create
     @user_id = session[:user_id]
     @recipe = Recipe.new(recipe_params)
-
+      
     if params[:add_ingredient]
       @recipe.ingredients.build
     elsif params[:remove_ingredient]
@@ -34,10 +32,12 @@ class RecipesController < ApplicationController
     elsif params[:remove_utensil]
 
     else
+      if @recipe.valid? == false
+        flash[:errors] = @recipe.errors.full_messages
+      end
       # at this point its saved 
       #now onto the ifstatement
       if @recipe.save
-        flash[:notice] = "Successfully created recipe."
         redirect_to @recipe and return
       end
     end
@@ -52,8 +52,8 @@ class RecipesController < ApplicationController
 
     if params[:add_ingredient]
     	# rebuild the ingredient attributes that doesn't have an id
-    	unless params[:recipe][:ingredients_attributes].blank?
-	      for attribute in params[:recipe][:ingredients_attributes]
+    	unless recipe_params[:ingredients_attributes].blank?
+	      for attribute in recipe_params[:ingredients_attributes]
 	        @recipe.ingredients.build(attribute.last.except(:_destroy)) unless attribute.last.has_key?(:id)
 	      end
     	end
@@ -64,7 +64,6 @@ class RecipesController < ApplicationController
       removed_ingredients = recipe_params[:ingredients_attributes].to_hash.collect { |i, att| att['id'] if (att['id'] && att[:_destroy].to_i == 1) }
       # physically delete the ingredients from database
       Ingredient.delete(removed_ingredients)
-      flash[:notice] = "Ingredients removed."
       for attribute in recipe_params[:ingredients_attributes]
       	# rebuild ingredients attributes that doesn't have an id and its _destroy attribute is not 1
         @recipe.ingredients.build(attribute.last.except(:_destroy)) if (!attribute.last.has_key?(:id) && attribute.last[:_destroy].to_i == 0)
@@ -83,15 +82,13 @@ class RecipesController < ApplicationController
         removed_utensils = recipe_params[:utensils_attributes].to_hash.collect { |i, att| att['id'] if (att['id'] && att[:_destroy].to_i == 1) }
         # physically delete the ingredients from database
         Utensil.delete(removed_utensils)
-        flash[:notice] = "Utensils removed."
         for attribute in recipe_params[:utensils_attributes]
           # rebuild ingredients attributes that doesn't have an id and its _destroy attribute is not 1
           @recipe.utensils.build(attribute.last.except(:_destroy)) if (!attribute.last.has_key?(:id) && attribute.last[:_destroy].to_i == 0)
         end
     else
-      # save 
+      # updated at this point
       if @recipe.update_attributes(recipe_params)
-        flash[:notice] = "Successfully updated recipe."
         redirect_to @recipe and return
       end
     end

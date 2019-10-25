@@ -5,11 +5,8 @@
     <%= link_to recipe.title , recipe_path(recipe)%><br>
 <%end%>
 
-
-
-
 <br><%= link_to  'All recipe', recipes_path%><br>
-
+<br><%= link_to  'Create Review for a Recipe', new_review_path%><br>
 <%= link_to 'Create Recipe', new_recipe_path%>
 <%= form_with url:'/logout', method: 'delete' do |f| %>
 <%= f.submit "Logout"%> 

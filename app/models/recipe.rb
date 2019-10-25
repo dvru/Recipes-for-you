@@ -8,9 +8,11 @@ class Recipe < ApplicationRecord
     belongs_to :user 
     
     has_many :reviews
-    has_many :users, through: :reviews
+    # has_many :users, through: :reviews
 
     accepts_nested_attributes_for :ingredients, :recipe_ingredients, :recipe_utensils, 
     :utensils, :allow_destroy => true
-    validates_presence_of :title
+    validates :title, uniqueness: { case_sensitive: false }, presence: true
+    validates :description, :cook_time, presence: true
+    
 end

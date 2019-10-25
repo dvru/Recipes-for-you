@@ -12,19 +12,17 @@ class UtensilsController < ApplicationController
     @utensil = Utensil.new
   end
 
- 
-def create 
-  @utensil = Utensil.new(utensil_params)
+  def create 
+    @utensil = Utensil.new(utensil_params)
 
-  if @utensil.valid?
-      @utensil.save 
-      # buybug
-      redirect_to utensil_path(@utensil) 
-  else 
+    if @utensil.valid?
+        @utensil.save
+        redirect_to utensil_path(@utensil) 
+    else 
       flash[:errors] = @utensil.errors.full_messages
       redirect_to new_utensil_path
-  end 
-end
+    end 
+  end
 
   def edit
     @utensil = Utensil.find(params[:id])
@@ -34,18 +32,17 @@ end
     @utensil = Utensil.find(params[:id])
     @utensil.update(utensil_params)
     redirect_to utensil_path(@utensil)
-end
+  end
 
-def destroy 
-  @utensil = Utensil.find(params[:id])
-  @utensil.destroy 
-  redirect_to utensils_path
-end 
+  def destroy 
+    @utensil = Utensil.find(params[:id])
+    @utensil.destroy 
+    redirect_to utensils_path
+  end 
 
   private
-
-def utensil_params
-    params.require(:utensil).permit(:name)
-end 
-
+  
+  def utensil_params
+     params.require(:utensil).permit(:name)
+  end 
 end
