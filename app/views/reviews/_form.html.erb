@@ -16,7 +16,7 @@
 <%= f.collection_select :recipe_id, @recipes, :id, :title %> 
 <br>
 <%= f.hidden_field :user_id, :value => @user.id %>
-</h1>
+
 <%= f.submit %>
 
 <% end %>

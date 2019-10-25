@@ -7,11 +7,12 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     total_rate = 0.0
     @recipe.reviews.each do |i|
       total_rate += i.rating
     end
-    @avg_rate = total_rate/@recipe.reviews.count
+    @avg_rate = (total_rate/@recipe.reviews.count).round(2)
   end
 
   def new
