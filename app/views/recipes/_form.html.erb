@@ -1,24 +1,26 @@
-<% if flash[:errors] %> 
+<%= stylesheet_link_tag "recipes" %>
+
+<h3><% if flash[:errors] %> 
 <% flash[:errors].each do |error| %> 
-<li><%= error %> </li> 
+<%= error %><br>
 <% end %> 
-<% end %>
+<% end %></h3>
 
 
 
-<%=form_for @recipe do |f|%>
-<%=f.label :Recipe_Name %>
+<h1><%=form_for @recipe do |f|%></h1>
+<h4><%=f.label :Recipe_Name %>
 <%=f.text_field :title %>
 <br>
 <%=f.label :Recipe_Description %>
 <%=f.text_area :description%>
 <br>
 <%=f.label :Cook_Time_Mins %>
-<%=f.number_field :cook_time %>
+<%=f.number_field :cook_time %></h4>
 
 </p>
-  <h3>Ingredients</h3>
-  <%= f.fields_for :ingredients do |ing| %>
+  <h1>Ingredients</h1>
+  <h4><%= f.fields_for :ingredients do |ing| %>
     <p>
       <%= ing.label :Amount %>
       <%= ing.number_field :quantity, :size => 5%>
@@ -32,11 +34,11 @@
   <% end -%>
   <p>
     <%= f.submit 'Add ingredient', :name => "add_ingredient" %>
-  </p>
+  </p></h4>
 
   </p>
-  <h3>Utensils</h3>
-  <%= f.fields_for :utensils do |ing| %>
+  <h1>Utensils</h1>
+  <h4><%= f.fields_for :utensils do |ing| %>
     <p>
       <%= ing.label :name %>
       <%= ing.text_field :name, :size => 20 %>
@@ -54,4 +56,4 @@
 <%= @user.name%>
 <br>
 <%=f.submit%>
-<%end%>
+<%end%></h4>

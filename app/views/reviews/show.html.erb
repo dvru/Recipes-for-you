@@ -1,16 +1,17 @@
+<%= stylesheet_link_tag "reviews" %>
 
-<h2>Reviews</h2>
-<h2><%=@review.rating%></h2>
-<h3><%=@review.comment%></h3>
-
-
-
+<h1>Reviews</h1>
+<h4><%=@review.rating%>
+<%=@review.comment%></h4>
 
 
 
 
-<%= button_to "All Reviews", reviews_path, method: :get %>
+
+
+
+<h1><%= button_to "All Reviews", reviews_path, method: :get %>
 <%= button_to "Edit Reviews", edit_review_path(@review), method: :get %>
-<%= button_to "Remove Review", review_path(@review), method: :delete, data: { confirm: 'Are you sure' }%>
+<%= button_to "Remove Review", review_path(@review), method: :delete, data: { confirm: 'Are you sure' }%></h1>
 
 

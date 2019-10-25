@@ -1,9 +1,10 @@
+<%= stylesheet_link_tag "ingredients" %>
 <h1> Name: <%= @ingredient.name %></h1>
 <h1> Name: <%= @ingredient.quantity %></h1>
-<h1> Name: <%= @ingredient.measurement_type%></h1>
+<h1> Name: <%= @ingredient.measurement_type%>
 
 
-<%= button_to "All Ingredients", ingredients_path, method: :get %>
-<%= button_to "Edit Ingredients", edit_ingredient_path(@ingredient), method: :get %>
-<%= button_to "Remove Ingredient", ingredient_path(@ingredient), method: 'delete', data: { confirm: 'Are you sure' } %>
+<%= button_to "All Ingredients", ingredients_path, method: :get %></h1>
+
+
 

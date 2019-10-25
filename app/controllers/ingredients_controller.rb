@@ -42,6 +42,17 @@ def destroy
   redirect_to ingredients_path
 end 
 
+def uniq_ingredients
+  @ingredients = Ingredient.all
+  @ingredient_arr = []
+    @ingredients.each do |ingredient|
+      @ingredient_arr << ingredient.name
+    end
+  @ingredient_names = @ingredient_arr.uniq
+ end
+
+
+
   private
 
 def ingredient_params

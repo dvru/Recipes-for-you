@@ -20,14 +20,15 @@ class ReviewsController < ApplicationController
   def create
     @user_id = session[:user_id]
     @review = Review.new(review_params)
+    @recipe = Recipe.find(params[:review][:recipe_id])
 
   if @review.valid?
       @review.save 
       # buybug
-      redirect_to review_path(@review) 
+      redirect_to recipe_path(@recipe) 
   else 
       flash[:errors] = @review.errors.full_messages
-      redirect_to new_review_path
+      redirect_to recipe_path(@recipe) 
   end 
   end
 

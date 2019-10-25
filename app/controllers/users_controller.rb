@@ -14,6 +14,7 @@ class UsersController < ApplicationController
             @user.save
             redirect_to @user
         else
+            flash[:errors] = @user.errors.full_messages
             redirect_to new_user_path
         end
     end
@@ -22,12 +23,14 @@ class UsersController < ApplicationController
         @user = User.find(session[:user_id])
         @recipes = Recipe.all
 
-    end
-
+ 
+    end 
 
 
     private
     def user_params
         params.require(:user).permit(:name, :password, :password_confirmation)
     end
+
+    
 end
