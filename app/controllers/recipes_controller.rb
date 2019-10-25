@@ -7,11 +7,12 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     total_rate = 0.0
     @recipe.reviews.each do |i|
       total_rate += i.rating
     end
-    @avg_rate = total_rate/@recipe.reviews.count
+    @avg_rate = (total_rate/@recipe.reviews.count).round(2)
     
   end
 
@@ -24,8 +25,9 @@ class RecipesController < ApplicationController
   def create
     @user_id = session[:user_id]
     @recipe = Recipe.new(recipe_params)
+   
 
-    if params[:add_ingredient]
+  if params[:add_ingredient]
       @recipe.ingredients.build
     elsif params[:remove_ingredient]
 
@@ -34,10 +36,12 @@ class RecipesController < ApplicationController
     elsif params[:remove_utensil]
 
     else
+      if @recipe.valid? == false 
+        flash[:errors] = @recipe.errors.full_messages 
+      end 
       # at this point its saved 
       #now onto the ifstatement
       if @recipe.save
-        flash[:notice] = "Successfully created recipe."
         redirect_to @recipe and return
       end
     end
@@ -52,8 +56,8 @@ class RecipesController < ApplicationController
 
     if params[:add_ingredient]
     	# rebuild the ingredient attributes that doesn't have an id
-    	unless params[:recipe][:ingredients_attributes].blank?
-	      for attribute in params[:recipe][:ingredients_attributes]
+    	unless recipe_params[:ingredients_attributes].blank?
+	      for attribute in recipe_params[:ingredients_attributes]
 	        @recipe.ingredients.build(attribute.last.except(:_destroy)) unless attribute.last.has_key?(:id)
 	      end
     	end
@@ -91,7 +95,6 @@ class RecipesController < ApplicationController
     else
       # save 
       if @recipe.update_attributes(recipe_params)
-        flash[:notice] = "Successfully updated recipe."
         redirect_to @recipe and return
       end
     end

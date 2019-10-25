@@ -1,14 +1,14 @@
-<% if flash[:errors] %>
+<h3><% if flash[:errors] %>
 <ul style=“color: red;”>
 	<% flash[:errors].each do |error| %>
 		<li> <%= error %> </li>
 	<% end %>
 </ul>
-<% end %>
+<% end %></h3>
 
 
-<%= form_for @utensil do |f|%>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.submit "Add Utensil" %>
+<h1><%= form_for @utensil do |f|%></h1>
+<h1><%= f.label :name %></h1>
+<h1><%= f.text_field :name %></h1>
+<h1><%= f.submit "Add Utensil" %></h1>
 <% end %>

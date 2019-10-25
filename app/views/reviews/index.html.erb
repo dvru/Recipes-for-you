@@ -1,13 +1,14 @@
-<ul>
-<h1 style="color:blue;"> Recipe Reviews: </h1>
+<%= stylesheet_link_tag "reviews" %>
 
-<% @reviews.each do |review| %>
+
+<h1> Recipe Reviews: </h1>
+
+<h4><% @reviews.each do |review| %>
 <li>
 
 <%= link_to review.recipe.title, review_path(review) %>
 </li>
-
-
 <% end %>
-</ul>
-<%= button_to "All Recipes", recipes_path, method: :get %>
+<br>
+<%= button_to "All Recipes", recipes_path, method: :get %></h4>
+

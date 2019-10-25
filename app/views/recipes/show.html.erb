@@ -1,28 +1,48 @@
+<%= stylesheet_link_tag "recipes" %>
+
+
 <h1><%=@recipe.title%></h1>
 <h4>Description: <%=@recipe.description%></h4>
 <h4>Cook Time: <%= @recipe.cook_time%> mins </h4>
 <h4>Created by: <%=@recipe.user.name%></h4>
 <h4>Rating: <%= @avg_rate%>
 <br>
-<h4>Cooking Utensils Requirement</h4>
-<% @recipe.utensils.each do |utensil|%>
+<h1>Cooking Utensils Requirement</h1>
+<h4><% @recipe.utensils.each do |utensil|%>
     <%= utensil.name%><br>
-<%end%>
+<%end%></h4>
 
-<h4>Ingredients Required</h4>
-<% @recipe.ingredients.each do |ingredient|%>
+<h1>Ingredients Required</h1>
+<h4><% @recipe.ingredients.each do |ingredient|%>
     <%= ingredient.quantity %> 
     <%= ingredient.measurement_type%>
     <%= ingredient.name%><br>
+<%end%></h4>
+
+<h1> ----------------------------------------</h1><br>
+
+<h1><%= form_for @review do |f| %></h1>
+<h1><%= f.label :rating %></h1>
+<h3> "Rate: 1-5" </h3>
+<h1><%= f.text_field :rating %></h1>
+<h1><%= f.label :comment %></h1>
+<h1><%= f.text_area :comment %></h1>
+<%= f.hidden_field :recipe_id, :value => @recipe.id %>
+<%= f.hidden_field :user_id, :value => @user.id %>
+<h1><%= f.submit %></h1>
+<% end %>
+
+
+<h4>
+<% if @recipe.user_id == session[:user_id] %>
+<a href="/recipes/<%= @recipe.id%>/edit"><button>Edit Recipes</button><a>
 <%end%>
 
+<br>
+<a href="/recipes"><button>All Recipes</button><a>
 
-<br><a href="/recipes/<%= @recipe.id%>/edit"><button>Edit Recipes</button><a>
-
-
-<br><a href="/recipes"><button>All Recipes</button><a>
 
 
 <%= form_for @recipe, method: :delete do |f|%>
 <br><%= f.submit "Remove Recipe"%>
-<%end%>
+<%end%></h4>

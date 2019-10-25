@@ -1,18 +1,21 @@
-<% if flash[:errors] %>
+<%= stylesheet_link_tag "ingredients" %>
+
+<h3><% if flash[:errors] %>
 <ul style=“color: red;”>
 	<% flash[:errors].each do |error| %>
 		<li> <%= error %> </li>
 	<% end %>
 </ul>
-<% end %>
+<% end %></h3>
 
 
-<%= form_for @ingredient do |f|%>
-<%= f.label :name %>
+<h1><%= form_for @ingredient do |f|%></h1>
+
+<h4><%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :quantity %>
 <%= f.text_field :quantity %>
 <%= f.label :measurement_type %>
 <%= f.text_field :measurement_type  %>
 <%= f.submit "Add ingredient" %>
-<% end %>
+<% end %></h4>

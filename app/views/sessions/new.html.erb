@@ -1,10 +1,20 @@
+<%= stylesheet_link_tag "sessions" %>
+
+<h3><% if flash[:errors] %> </h3>
+    <h3><%= flash[:errors]%></h3>
+<h3><% end %></h3>
+
+<h1> Welcome to Recipes for you!</h1>
+
+
+
 <%= form_with url:'/login', method: 'post' do |f| %>
-<%= f.label :Username %>
-<%= f.text_field :name %>
-<%= f.label :password %>
+<h4><%= f.label :Username %></h4>
+<h4><%= f.text_field :name %><h4>
+<h4><%= f.label :password %><h4>
 <%= f.password_field :password %>
-<%= f.submit "Login" %>
+<h4><%= f.submit "Login" %></h4>
 <% end %>
 
-<%= link_to  'Sign up', new_user_path %><br>
+<h1><%= link_to  'Sign up', new_user_path %><br></h1>
 
